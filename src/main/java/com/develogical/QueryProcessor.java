@@ -46,6 +46,29 @@ public class QueryProcessor {
             return result;
         }
 
+        if (query.toLowerCase().contains("minus")) {
+
+            String sample = query.toLowerCase();
+            char[] chars = sample.toCharArray();
+            StringBuilder sb = new StringBuilder();
+            for(char c : chars){
+                if(Character.isDigit(c)){
+                    sb.append(c);
+                }
+                if(c == 'm'){
+                    sb.append(' ');
+                }
+            }
+            String str = sb.toString();
+            String[] splited = str.split(" ");
+            int a = Integer.valueOf(splited[0]);
+            int b = Integer.valueOf(splited[1]);
+            int c = a-b;
+            String result = Integer.toString(c);
+
+            return result;
+        }
+
         if (query.toLowerCase().contains("largest")) {
 
             String sample = query.toLowerCase();
