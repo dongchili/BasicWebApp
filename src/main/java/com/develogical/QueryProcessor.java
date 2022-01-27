@@ -13,6 +13,10 @@ public class QueryProcessor {
             return "Imperial College is a university in London";
         }
 
+        if (query.toLowerCase().contains("your team")) {
+            return "GoTeam";
+        }
+
         if (query.toLowerCase().contains("leon")) {
             return "leon will get offers from multiple big names";
         }
