@@ -61,10 +61,12 @@ public class QueryProcessor {
             }
             String str = sb.toString();
             String[] splited = str.split(" ");
-            int a = Integer.valueOf(splited[0]);
-            int b = Integer.valueOf(splited[1]);
-            int c = Math.max(a,b);
-            String result = Integer.toString(c);
+            int max = -1;
+            for (String s: splited){
+                int temp = Integer.valueOf(s);
+                if(max<=temp) max = temp;
+            }
+            String result = Integer.toString(max);
 
             return result;
         }
